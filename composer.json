@@ -1,12 +1,12 @@
 {
-    "name": "atendwa/su-starter-kit",
+    "name": "atendwa/mpesa-artisan",
     "version": "1.0.0",
     "description": "",
     "keywords": [
         "Atendwa",
         "laravel"
     ],
-    "homepage": "https://github.com/atendwa/su-starter-kit",
+    "homepage": "https://github.com/atendwa/mpesa-artisan",
     "license": "MIT",
     "authors": [
         {
@@ -17,21 +17,12 @@
     ],
     "require": {
         "php": "^8.2",
-        "aaronfrancis/pulse-outdated": "^0.1.2",
-        "barryvdh/laravel-debugbar": "^3.13",
-        "barryvdh/laravel-ide-helper": "^3.0",
-        "directorytree/ldaprecord-laravel": "^3.3",
-        "itsgoingd/clockwork": "^5.2",
-        "laravel/horizon": "^5.24",
-        "laravel/pulse": "^1.2",
-        "laravel/telescope": "^5.0",
-        "spatie/laravel-activitylog": "^4.8",
-        "spatie/laravel-package-tools": "^1.16",
-        "spatie/laravel-permission": "^6.7",
-        "timacdonald/pulse-validation-errors": "^1.3"
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
+        "laravel/pint": "^1.16",
         "larastan/larastan": "^2.9",
+        "barryvdh/laravel-ide-helper": "^3.0",
         "orchestra/testbench": "^9.0.0||^8.22.0",
         "pestphp/pest": "^2.34",
         "pestphp/pest-plugin-arch": "^2.7",
@@ -39,11 +30,13 @@
         "phpstan/extension-installer": "^1.3",
         "phpstan/phpstan-deprecation-rules": "^1.1",
         "phpstan/phpstan-phpunit": "^1.3",
-        "spatie/laravel-ray": "^1.35"
+        "spatie/laravel-ray": "^1.35",
+        "nunomaduro/collision": "^8.1.1||^7.10.0",
+        "nunomaduro/phpinsights": "^2.11"
     },
     "autoload": {
         "psr-4": {
-            "Atendwa\\SuStarterKit\\": "src/"
+            "Atendwa\\MpesaArtisan\\": "src/"
         },
         "files": [
             "src/Helpers/core.php"
@@ -51,7 +44,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Atendwa\\SuStarterKit\\Tests\\": "tests/"
+            "Atendwa\\MpesaArtisan\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -75,22 +68,17 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "pestphp/pest-plugin": true
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Atendwa\\SuStarterKit\\SuStarterKitServiceProvider"
+                "Atendwa\\MpesaArtisan\\MpesaArtisanServiceProvider"
             ],
-            "aliases": {
-                "DepartmentLookup": "Atendwa\\SuStarterKit\\Facades\\DepartmentLookup",
-                "BooleanEvaluator": "Atendwa\\SuStarterKit\\Facades\\BooleanEvaluator",
-                "UserLookup": "Atendwa\\SuStarterKit\\Facades\\UserLookup",
-                "ApiClient": "Atendwa\\SuStarterKit\\Facades\\ApiClient"
-            }
+            "aliases": {}
         }
     },
     "minimum-stability": "stable",

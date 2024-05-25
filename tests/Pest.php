@@ -1,5 +1,5 @@
 <?php
 
-use Atendwa\SuStarterKit\Tests\TestCase;
+use Atendwa\MpesaArtisan\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

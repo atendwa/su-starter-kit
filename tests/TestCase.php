@@ -1,8 +1,8 @@
 <?php
 
-namespace Atendwa\SuStarterKit\Tests;
+namespace Atendwa\MpesaArtisan\Tests;
 
-use Atendwa\SuStarterKit\SuStarterKitServiceProvider;
+use Atendwa\MpesaArtisan\MpesaArtisanServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -19,7 +19,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            SuStarterKitServiceProvider::class,
+            MpesaArtisanServiceProvider::class,
         ];
     }
 }
