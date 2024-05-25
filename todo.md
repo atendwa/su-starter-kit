@@ -1,0 +1,18 @@
+- Install 3rd party packages i.e. permissions, activity log, reverb, pulse, honeypot, horizon, telescope, etc
+- write tests 😪
+- install pint
+- install laravel-ide-helper
+- install laravel-debugbar
+- install laravel-activitylog
+- install laravel-permission
+- install laravel-reverb
+- install laravel-pulse
+- install laravel-honeypot
+- install laravel-horizon
+- install laravel-telescope
+- install php insights
+- setup github actions
+- update example env file
+- update readme file
+- update pint.json file
+- update changelog file

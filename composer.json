@@ -1,0 +1,98 @@
+{
+    "name": "atendwa/su-starter-kit",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [
+        "Atendwa",
+        "laravel"
+    ],
+    "homepage": "https://github.com/atendwa/su-starter-kit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anthony Tendwa Michael",
+            "email": "tendwa.am@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "aaronfrancis/pulse-outdated": "^0.1.2",
+        "barryvdh/laravel-debugbar": "^3.13",
+        "barryvdh/laravel-ide-helper": "^3.0",
+        "directorytree/ldaprecord-laravel": "^3.3",
+        "itsgoingd/clockwork": "^5.2",
+        "laravel/horizon": "^5.24",
+        "laravel/pulse": "^1.2",
+        "laravel/telescope": "^5.0",
+        "spatie/laravel-activitylog": "^4.8",
+        "spatie/laravel-package-tools": "^1.16",
+        "spatie/laravel-permission": "^6.7",
+        "timacdonald/pulse-validation-errors": "^1.3"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.9",
+        "orchestra/testbench": "^9.0.0||^8.22.0",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-arch": "^2.7",
+        "pestphp/pest-plugin-laravel": "^2.3",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "spatie/laravel-ray": "^1.35"
+    },
+    "autoload": {
+        "psr-4": {
+            "Atendwa\\SuStarterKit\\": "src/"
+        },
+        "files": [
+            "src/Helpers/core.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Atendwa\\SuStarterKit\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "clear": "@php vendor/bin/testbench package:purge-honeypot --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": [
+            "@composer run prepare",
+            "@php vendor/bin/testbench workbench:build --ansi"
+        ],
+        "start": [
+            "Composer\\Config::disableProcessTimeout",
+            "@composer run build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Atendwa\\SuStarterKit\\SuStarterKitServiceProvider"
+            ],
+            "aliases": {
+                "DepartmentLookup": "Atendwa\\SuStarterKit\\Facades\\DepartmentLookup",
+                "BooleanEvaluator": "Atendwa\\SuStarterKit\\Facades\\BooleanEvaluator",
+                "UserLookup": "Atendwa\\SuStarterKit\\Facades\\UserLookup",
+                "ApiClient": "Atendwa\\SuStarterKit\\Facades\\ApiClient"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
